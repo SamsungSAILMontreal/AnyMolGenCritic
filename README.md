@@ -188,8 +188,7 @@ If you find the code useful, please consider citing our STGG+ paper:
 
 and the original STGG paper:
 ```bib
-@inproceedings{
-ahn2022spanning,
+@inproceedings{ahn2022spanning,
 title={Spanning Tree-based Graph Generation for Molecules},
 author={Sungsoo Ahn and Binghong Chen and Tianzhe Wang and Le Song},
 booktitle={International Conference on Learning Representations},
