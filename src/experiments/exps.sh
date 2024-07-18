@@ -186,7 +186,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py --dataset_name qm9 --num_layers 3 --tag e
 
 ## Chromophore out-of-distribution
 
-CUDA_VISIBLE_DEVICES=0 python train.py --dataset_name chromophore --num_layers 3 --tag exp_chromophore50epoch --bf16 \
+CUDA_VISIBLE_DEVICES=0 python train.py --dataset_name chromophore --num_layers 3 --tag exp_chromophore1000epoch --bf16 \
 --check_sample_every_n_epoch 999 --dropout 0.0 --warmup_steps 100 --lr_decay 0.1 --beta2 0.95 --weight_decay 0.1 --lambda_predict_prop 1.0 \
 --batch_size 128 --lr 2.5e-4 --max_epochs 1000 --n_gpu 1 --randomize_order --start_random --scaling_type std --special_init --nhead 16 --swiglu --expand_scale 2.0 \
 --max_len 600 --gpt --no_bias --rmsnorm --rotary --log_every_n_steps 24
