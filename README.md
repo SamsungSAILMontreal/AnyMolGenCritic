@@ -25,16 +25,15 @@ module load cuda/11.8
 python -m venv your_dir/molecules_autoregressive
 source your_dir/molecules_autoregressive/bin/activate
 pip install --upgrade pip setuptools wheel
-pip install --upgrade --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install --upgrade --pre torch=2.3.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install lightning neptune
 pip install torch-geometric
-pip install torch-cluster -f https://data.pyg.org/whl/torch-2.3.0+cu118.html
-pip install torch_sparse -f https://data.pyg.org/whl/torch-2.3.0+cu118.html
-pip install torch_scatter -f https://data.pyg.org/whl/torch-2.3.0+cu118.html
-pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.2.0+cu118.html
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.3.0+cu118.html
 pip install cython molsets rdkit pomegranate==0.14.8 pyyaml scikit-learn pandas numpy networkx
-pip install git+https://github.com/kohbanye/moses.git
 pip install fcd_torch
+git clone https://github.com/AlexiaJM/moses_fixed # fix two annoying bugs in MOSES, which is not updated anymore
+cd moses_fixed
+python setup.py install
 
 ## Build vocabulary
 python data_preprocessing.py --dataset_name qm9 --MAX_LEN 150 --force_vocab_redo
