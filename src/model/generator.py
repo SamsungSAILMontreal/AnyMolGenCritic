@@ -385,7 +385,7 @@ class CondGenerator(BaseGenerator):
         else:
             use_guidance = False
         if guidance_rand:
-            guidance = torch.rand(num_samples, 1, dtype=batched_cond_data.dtype, device=device)*2.5 - 0.5 # [0,1] to [0.5, 2.0]
+            guidance = torch.rand(num_samples, 1, dtype=batched_cond_data.dtype, device=device)*2.5 - 0.5 # [0,1] to [-0.5, 2.0]
             use_guidance = True
 
         def _update_data(inp):
